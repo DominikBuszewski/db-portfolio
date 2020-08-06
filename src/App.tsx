@@ -1,10 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
+import GlobalStyle from "./styles/global-styles.styles";
+import HomePage from "./pages//home";
 
 const App: React.FC = () => {
 	return (
-		<div>
-			<div>hello</div>
-		</div>
+		<Fragment>
+			<GlobalStyle />
+			<HomePage />
+		</Fragment>
 	);
 };
 
