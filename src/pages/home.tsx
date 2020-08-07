@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { colors, device, fonts } from "../styles/main-styles.styles";
+import { device } from "../styles/main-styles.styles";
 import Button from "../components/button/button";
 
 const StyledBackground = styled.div`
-	background-color: ${colors.secondary};
+	background-color: ${({ theme }) => theme.secondary};
 	width: 100vw;
 	height: 100vh;
 `;
@@ -12,12 +12,12 @@ const StyledBackground = styled.div`
 const StyledWrapper = styled.div`
 	width: 100%;
 	height: 100%;
-	background-color: ${colors.primary};
+	background: ${({ theme }) => theme.primary};
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	color: ${colors.white};
+	color: ${({ theme }) => theme.white};
 	clip-path: polygon(65% 0, 100% 25%, 100% 81%, 0 100%, 0 0);
 
 	@media ${device.tablet} {
@@ -36,8 +36,6 @@ const StyledWrapper = styled.div`
 		}
 	}
 	h3 {
-		font-family: ${fonts.secondary};
-
 		@media ${device.desktop} {
 			font-size: 3em;
 		}
@@ -72,9 +70,9 @@ const HomePage: React.FC = () => (
 			<h3>Front End Developer </h3>
 			<h1>Dominik Buszewski</h1>
 			<StyledButtonContainer>
-				<Button inverted={true} prop={fakeclick} name={"Projects"} />
+				<Button prop={fakeclick} name={"Projects"} />
 
-				<Button inverted={false} prop={fakeclick} name={"Contact"} />
+				<Button inverted prop={fakeclick} name={"Contact"} />
 			</StyledButtonContainer>
 		</StyledWrapper>
 	</StyledBackground>

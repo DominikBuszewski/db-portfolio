@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { colors, device } from "../../styles/main-styles.styles";
+import { device } from "../../styles/main-styles.styles";
 import { NavLink } from "react-router-dom";
 
 declare module "react" {
@@ -21,7 +21,7 @@ const StyledNav = styled.nav`
 	transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
 	align-items: center;
 	justify-content: center;
-	background: ${colors.primary};
+	background: ${({ theme }) => theme.primary};
 
 	@media ${device.tablet} {
 		width: 70%;
@@ -55,8 +55,8 @@ const StyledNav = styled.nav`
 			padding: 0.5rem;
 
 			:hover {
-				border-top: 1px solid ${colors.secondary};
-				border-bottom: 1px solid ${colors.secondary};
+				border-top: 1px solid ${({ theme }) => theme.secondary};
+				border-bottom: 1px solid ${({ theme }) => theme.secondary};
 			}
 
 			@media ${device.tablet} {
@@ -65,7 +65,7 @@ const StyledNav = styled.nav`
 
 			a {
 				text-decoration: none;
-				color: ${colors.white};
+				color: ${({ theme }) => theme.white};
 			}
 		}
 	}

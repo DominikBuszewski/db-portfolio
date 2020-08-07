@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Navigation from "../navigation/navigation.component";
-import { device, colors } from "../../styles/main-styles.styles";
+import { device } from "../../styles/main-styles.styles";
 import Hamburger from "../hamburger/hamburger";
 
 const StyledHeader = styled.header`
@@ -28,7 +28,7 @@ const StyledHeader = styled.header`
 		margin-left: 0.5em;
 		text-align: center;
 		font-size: 2rem;
-		color: ${colors.white};
+		color: ${({ theme }) => theme.white};
 
 		@media ${device.tablet} {
 			margin-left: 4rem;

@@ -10,32 +10,40 @@ export const device = {
 	desktop: `(min-width: ${size.xl})`,
 };
 
-const fontFamily = {
-	decorative1: `'Sriracha', cursive`,
-	decorative2: `'Lemonada', cursive`,
-};
+// const fontFamily = {
+// 	decorative1: `'Sriracha', cursive`,
+// 	decorative2: `'Lemonada', cursive`,
+// };
 
-export const fonts = {
-	secondary: `${fontFamily.decorative1}`,
-	additional: `${fontFamily.decorative2}`,
-};
+// export const fonts = {
+// 	secondary: `${fontFamily.decorative1}`,
+// 	additional: `${fontFamily.decorative2}`,
+// };
 
-const color = {
-	a: "#141414",
-	b: "#eeeeee",
-	c: "#303a52", //dark grey
-	d: "#f5587b", // dark pink
-	e: "#485188", //darker blue-grey
-	f: "#382f60", //deep dark blue
-	g: "#a45fbe", //purple
-};
-
-export const colors = {
-	black: `${color.a}`,
-	white: `${color.b}`,
-	primary: `${color.c}`,
-	secondary: `${color.d}`,
-	third: `${color.e}`,
-	fourth: `${color.f}`,
-	fifth: `${color.g}`,
+// export const colors = {
+// 	black: `${color.a}`,
+// 	white: `${color.b}`,
+// 	primary: `${color.c}`,
+// 	secondary: `${color.d}`,
+// 	third: `${color.e}`,
+// 	fourth: `${color.f}`,
+// 	fifth: `${color.g}`,
+// };
+export const theme = {
+	fonts: {
+		subFont: `'Sriracha', cursive`,
+		mainFont: `'Montserrat', sans-serif`,
+	},
+	black: "#141414",
+	white: "#eeeeee",
+	primary: "#303a52",
+	secondary: "#f5587b",
+	third: "#485188",
+	fourth: "#382f60",
+	fifth: "#a45fbe",
+	light: 300,
+	regular: 400,
+	medium: 500,
+	semiBold: 600,
+	bold: 700,
 };
