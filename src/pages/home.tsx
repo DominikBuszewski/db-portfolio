@@ -4,7 +4,7 @@ import { colors, device, fonts } from "../styles/main-styles.styles";
 import Button from "../components/button/button";
 
 const StyledBackground = styled.div`
-	background-color: #f5587b;
+	background-color: ${colors.secondary};
 	width: 100vw;
 	height: 100vh;
 `;

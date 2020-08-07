@@ -1,6 +1,7 @@
-import React, { AriaAttributes, DOMAttributes } from "react";
+import React from "react";
 import styled from "styled-components";
 import { colors, device } from "../../styles/main-styles.styles";
+import { NavLink } from "react-router-dom";
 
 declare module "react" {
 	interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
@@ -17,7 +18,7 @@ const StyledNav = styled.nav`
 	display: flex;
 	width: 100vw;
 	height: 100vh;
-	transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(-300%)")};
+	transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
 	align-items: center;
 	justify-content: center;
 	background: ${colors.primary};
@@ -27,6 +28,7 @@ const StyledNav = styled.nav`
 		height: 10vh;
 		transform: translateX(0%);
 		transition: 0s ease;
+		background-color: transparent;
 	}
 
 	@media ${device.desktop} {
@@ -47,12 +49,23 @@ const StyledNav = styled.nav`
 		}
 
 		li {
-			color: ${colors.white};
+			cursor: pointer;
+
 			font-size: 2rem;
 			padding: 0.5rem;
 
+			:hover {
+				border-top: 1px solid ${colors.secondary};
+				border-bottom: 1px solid ${colors.secondary};
+			}
+
 			@media ${device.tablet} {
 				font-size: 1.2rem;
+			}
+
+			a {
+				text-decoration: none;
+				color: ${colors.white};
 			}
 		}
 	}
@@ -69,11 +82,18 @@ const Navigation: React.FC<OpenType> = ({ menuHandler, open }) => {
 	return (
 		<StyledNav open={open}>
 			<ul>
-				<li>Home</li>
-				<li>Projects</li>
-				<li>Technologies</li>
-				<li>About</li>
-				<li>Contact</li>
+				<li>
+					<NavLink to="/">Home</NavLink>
+				</li>
+				<li>
+					<NavLink to="/projects">Projects</NavLink>
+				</li>
+				<li>
+					<NavLink to="/technologies">Technologies</NavLink>
+				</li>
+				<li>
+					<NavLink to="/contact">Contact</NavLink>
+				</li>
 			</ul>
 		</StyledNav>
 	);

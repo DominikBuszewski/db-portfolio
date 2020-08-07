@@ -11,6 +11,7 @@ import { colors, device } from "../../styles/main-styles.styles";
 const StyledButton = styled.button`
 	padding: 1rem;
 	min-width: 14rem;
+	outline: none;
 	border-radius: 40px;
 	font-size: 1.2rem;
 	margin: 0.2rem;
@@ -19,7 +20,7 @@ const StyledButton = styled.button`
 	border: 2px solid ${colors.secondary};
 	background-color: ${({ inverted }) =>
 		inverted ? `${colors.secondary}` : `transparent`};
-
+	cursor: pointer;
 	@media ${device.tablet} {
 		padding: 1.7rem;
 		min-width: 16rem;
