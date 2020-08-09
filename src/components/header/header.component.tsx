@@ -6,19 +6,18 @@ import Hamburger from "../hamburger/hamburger";
 
 const StyledHeader = styled.header`
 	width: 100vw;
-	height: 10vh;
 	position: absolute;
 	top: 0;
 	right: 0;
-
+	height: 10vh;
 	z-index: 100;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: transparent;
+	background: transparent;
+	/* background-color: ${({ theme }) => theme.primary}; */
 
 	@media ${device.tablet} {
-		height: 8vh;
 		justify-content: space-between;
 		align-items: center;
 		flex-direction: row;
@@ -46,10 +45,6 @@ const Header: React.FC = () => {
 
 	return (
 		<StyledHeader>
-			<div>
-				<div>DB</div>
-			</div>
-
 			<Hamburger menuHandler={MenuHandler} />
 			<Navigation menuHandler={MenuHandler} open={open} />
 		</StyledHeader>

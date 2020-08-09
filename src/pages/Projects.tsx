@@ -5,9 +5,10 @@ import ProjectItem from "../components/projectItem/projectItem";
 
 const StyledProjectsPage = styled.div`
 	min-height: 100vh;
-	width: 100%;
+	width: 100vw;
 	background-color: ${({ theme }) => theme.third};
 	position: relative;
+	overflow-x: hidden;
 `;
 
 const StyledProjectContainer = styled.div`

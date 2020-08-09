@@ -12,46 +12,46 @@ declare module "react" {
 
 const StyledNav = styled.nav`
 	position: fixed;
-	top: 0;
-	right: 0;
-	z-index: 50;
+	top: 0px;
+	right: 0px;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100vw;
 	height: 100vh;
 	transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
-	align-items: center;
-	justify-content: center;
 	background: ${({ theme }) => theme.primary};
+	z-index: 5;
 
 	@media ${device.tablet} {
-		width: 70%;
 		height: 10vh;
+		align-items: center;
+		justify-content: flex-end;
 		transform: translateX(0%);
 		transition: 0s ease;
 		background-color: transparent;
 	}
 
 	@media ${device.desktop} {
-		width: 40%;
-		height: 10vh;
 	}
 	ul {
+		width: 100%;
 		list-style: none;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
 
 		@media ${device.tablet} {
+			width: 40%;
 			flex-direction: row;
-			align-items: center;
 			justify-content: space-around;
+			align-items: center;
+			height: 100%;
 		}
 
 		li {
 			cursor: pointer;
-
-			font-size: 2rem;
+			text-align: center;
+			font-size: 3rem;
 			padding: 0.5rem;
 
 			:hover {
@@ -64,6 +64,7 @@ const StyledNav = styled.nav`
 			}
 
 			a {
+				text-align: center;
 				text-decoration: none;
 				color: ${({ theme }) => theme.white};
 			}

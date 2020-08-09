@@ -36,11 +36,12 @@ export const theme = {
 	},
 	black: "#141414",
 	white: "#eeeeee",
-	primary: "#303a52",
-	secondary: "#f5587b",
-	third: "#485188",
-	fourth: "#382f60",
-	fifth: "#a45fbe",
+	primary: "#303a52", //dark grey
+	secondary: "#f5587b", //pink
+	third: "#485188", //violet
+	fourth: "#382f60", //dark violet
+	fifth: "#433466", //purple
+	sixth: "#83e85a", //green
 	light: 300,
 	regular: 400,
 	medium: 500,
