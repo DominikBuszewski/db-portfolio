@@ -40,8 +40,11 @@ export const theme = {
 	secondary: "#f5587b", //pink
 	third: "#485188", //violet
 	fourth: "#382f60", //dark violet
-	fifth: "#433466", //purple
+	fifth: "#332233", // zerogracity
 	sixth: "#83e85a", //green
+	seventh: "#324e7b", // dark blue
+	blue: "#1c2841", //blue
+	zeus: "#3b3c38", // zeus
 	light: 300,
 	regular: 400,
 	medium: 500,
