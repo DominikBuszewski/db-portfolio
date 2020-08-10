@@ -14,7 +14,7 @@ interface Props {
 }
 
 const StyledButton = styled.button<Props>`
-	padding: 1rem;
+	padding: 1.5rem 2rem;
 	min-width: 14rem;
 	outline: none;
 	border-radius: 40px;
@@ -36,7 +36,7 @@ const StyledButton = styled.button<Props>`
 
 
 	@media ${device.tablet} {
-		padding: 1.7rem;
+		/* padding: 1.7rem; */
 		min-width: 16rem;
 	}
 `;

@@ -2,46 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../button/button";
 import { device } from "../../styles/main-styles.styles";
-import { ReactLogo } from "@styled-icons/boxicons-logos/ReactLogo";
-import { Reactrouter } from "@styled-icons/simple-icons/Reactrouter";
-import { Git } from "@styled-icons/boxicons-logos/Git";
-import { StyledComponents } from "@styled-icons/simple-icons/StyledComponents";
-import { Firebase } from "@styled-icons/simple-icons/Firebase";
-
-const FirebaseLogo = styled(Firebase)`
-	width: 3rem;
-
-	@media ${device.tablet} {
-		width: 5rem;
-	}
-`;
-
-const StyledComponentsLogo = styled(StyledComponents)`
-	width: 3rem;
-	@media ${device.tablet} {
-		width: 5rem;
-	}
-`;
-
-const GitLogo = styled(Git)`
-	width: 3rem;
-	@media ${device.tablet} {
-		width: 5rem;
-	}
-`;
-const RouterLogo = styled(Reactrouter)`
-	width: 3rem;
-	@media ${device.tablet} {
-		width: 5rem;
-	}
-`;
-
-const RLogo = styled(ReactLogo)`
-	width: 3rem;
-	@media ${device.tablet} {
-		width: 5rem;
-	}
-`;
 
 const parfum = require("../../assets/images/parfum.JPG");
 
@@ -74,6 +34,11 @@ const Wrapper = styled.div`
 		width: 50%;
 		margin: 0 0;
 	}
+
+	a {
+		overflow: hidden;
+		cursor: pointer;
+	}
 `;
 
 const StyledInformationPanel = styled.div`
@@ -104,20 +69,33 @@ const StyledInformationPanel = styled.div`
 
 const StyledImage = styled.img`
 	width: 100%;
+
+	:hover {
+		transform: scale(1.2);
+		transition: transform 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+	}
 `;
 
-const IconContainer = styled.section`
-	margin: 2em auto;
+const TechContainer = styled.section`
+	margin: 1em auto;
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	justify-items: center;
+	align-items: center;
 	border-top: 2px solid ${({ theme }) => theme.fifth};
 	border-bottom: 2px solid ${({ theme }) => theme.fifth};
 
 	@media ${device.tablet} {
-		width: 60%;
+		width: 90%;
 		padding: 0.5em;
+	}
+
+	p {
+		font-weight: bold;
+		font-family: ${({ theme }) => theme.fonts.subFont};
+		text-align: center;
+		color: ${({ theme }) => theme.white};
 	}
 `;
 
@@ -136,7 +114,9 @@ const ButtonContainer = styled.section`
 const ProjectItem = () => (
 	<StyledProjectItem>
 		<Wrapper>
-			<StyledImage src={parfum} alt="project image" />
+			<a href="https://parfum-shop.herokuapp.com/" target="_blank">
+				<StyledImage src={parfum} alt="project image" />
+			</a>
 		</Wrapper>
 		<Wrapper>
 			<StyledInformationPanel>
@@ -145,20 +125,18 @@ const ProjectItem = () => (
 					Ecommerce shop with parfums, project created with React where I for
 					the first time connected to a databse (Firebase)
 				</p>
-				<p>
-					Site is uploaded on Heroku so it may take some time to wake up from
-					hibernation state
-				</p>
-				<IconContainer>
-					<RLogo />
 
-					<RouterLogo />
-					<GitLogo />
-					<StyledComponentsLogo />
-					<FirebaseLogo />
-				</IconContainer>
+				<TechContainer>
+					<p>React</p>
+					<p>React-router</p>
+					<p>Git</p>
+					<p>Styled-components</p>
+					<p>Firebase</p>
+					<p>yarn</p>
+				</TechContainer>
 				<ButtonContainer>
 					<Button name={"Code"} />
+
 					<Button inverted name={"Demo"} />
 				</ButtonContainer>
 			</StyledInformationPanel>

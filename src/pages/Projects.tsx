@@ -6,17 +6,17 @@ import ProjectItem from "../components/projectItem/projectItem";
 const StyledProjectsPage = styled.div`
 	min-height: 100vh;
 	width: 100vw;
-	background-color: ${({ theme }) => theme.third};
+	background-color: ${({ theme }) => theme.seventh};
 	position: relative;
 	overflow-x: hidden;
 `;
 
 const StyledProjectContainer = styled.div`
-	background-color: ${({ theme }) => theme.third};
+	background-color: ${({ theme }) => theme.seventh};
 `;
 
 const Wrapper = styled.div`
-	background-color: ${({ theme }) => theme.third};
+	background-color: ${({ theme }) => theme.seventh};
 	position: absolute;
 	top: 10vh;
 	width: 100%;

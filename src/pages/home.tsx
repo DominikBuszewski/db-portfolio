@@ -31,6 +31,7 @@ const StyledWrapper = styled.div`
 	h1 {
 		font-size: 3em;
 		text-align: center;
+		font-family: ${({ theme }) => theme.fonts.subFont};
 		@media ${device.desktop} {
 			font-size: 5em;
 		}

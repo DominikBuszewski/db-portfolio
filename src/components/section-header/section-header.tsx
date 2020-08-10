@@ -2,11 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { device } from "../../styles/main-styles.styles";
 
-type SectionType = {
-	title: String;
-	paragraph: String;
-};
-
 const StyledWrapper = styled.div`
 	width: 80%;
 	margin: 0 auto;
@@ -42,6 +37,11 @@ const StyledWrapper = styled.div`
 		}
 	}
 `;
+
+type SectionType = {
+	title: String;
+	paragraph: String;
+};
 
 const SectionHeader: React.FC<SectionType> = ({ title, paragraph }) => {
 	return (

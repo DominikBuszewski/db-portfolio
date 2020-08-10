@@ -22,6 +22,7 @@ const GithubLogo = styled(Github)`
 const StyledContact = styled.div`
 	min-height: 100vh;
 	background-color: ${({ theme }) => theme.blue};
+	overflow-x: hidden;
 `;
 
 const Spacer = styled.div`
@@ -33,20 +34,22 @@ const Spacer = styled.div`
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-arounds;
 	align-items: center;
 	width: 90%;
-	margin: 7em auto;
+	margin: 0 auto;
 
 	@media ${device.desktop} {
 		flex-direction: row;
 		width: 80%;
+		height: 71vh;
 	}
 `;
 
 const StyledContactForm = styled.div`
 	width: 100%;
 	height: 50vh;
+
 	* {
 		margin: 0.3em 0;
 		color: ${({ theme }) => theme.white};
@@ -79,14 +82,30 @@ const StyledContactForm = styled.div`
 const StyledContactInfoWrapper = styled.div`
 	width: 100%;
 	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	justify-content: center;
+
+	@media ${device.tablet} {
+		justify-content: center;
+	}
+
+	@media ${device.desktop} {
+		justify-content: flex-start;
+	}
 `;
 
 const StyledContactInfo = styled.div`
 	display: flex;
 
 	div {
-		width: 70%;
+		width: 80%;
 		margin: 1em 0;
+
+		@media ${device.desktop} {
+			width: 100%;
+		}
 	}
 
 	p,
@@ -94,6 +113,11 @@ const StyledContactInfo = styled.div`
 		font-size: 0.8rem;
 		color: ${({ theme }) => theme.white};
 		margin-left: 1em;
+		margin-top: 0.5em;
+	}
+
+	span {
+		font-weight: bold;
 	}
 `;
 
@@ -109,9 +133,10 @@ const Contact = () => (
 				<StyledContactInfo>
 					<EmailLogo />
 					<div>
-						<h3>Would you like to write to me?</h3>
+						<h3>Would you like to write me a message?</h3>
 						<p>
-							Use my email address: <h4>dominik.buszewski@gmai.com</h4>
+							Use my email address:
+							<br /> <span>dominik.buszewski@gmai.com</span>
 						</p>
 					</div>
 				</StyledContactInfo>
@@ -121,7 +146,10 @@ const Contact = () => (
 						<h3>Would you like to see my work experience?</h3>
 						<p>
 							Check my Linkedin:
-							<h4>https://www.linkedin.com/in/dominik-buszewski-4697171a4/</h4>
+							<br />
+							<span>
+								https://www.linkedin.com/in/dominik-buszewski-4697171a4/
+							</span>
 						</p>
 					</div>
 				</StyledContactInfo>
@@ -130,7 +158,8 @@ const Contact = () => (
 					<div>
 						<h3>Would you like to see my code?</h3>
 						<p>
-							Check my github: <h4>https://github.com/DominikBuszewski</h4>
+							Check my github: <br />
+							<span>https://github.com/DominikBuszewski</span>
 						</p>
 					</div>
 				</StyledContactInfo>

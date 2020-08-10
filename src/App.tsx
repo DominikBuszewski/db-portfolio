@@ -15,12 +15,14 @@ const App: React.FC = () => {
 			<GlobalStyle />
 			<ThemeProvider theme={theme}>
 				<Header />
-				<Switch>
-					<Route exact path="/" component={HomePage} />
-					<Route path="/projects" component={Projects} />
-					<Route path="/technologies" component={Technologies} />
-					<Route path="/contact" component={Contact} />
-				</Switch>
+				<main>
+					<Switch>
+						<Route exact path="/" component={HomePage} />
+						<Route exact path="/projects" component={Projects} />
+						<Route exact path="/technologies" component={Technologies} />
+						<Route exact path="/contact" component={Contact} />
+					</Switch>
+				</main>
 			</ThemeProvider>
 		</BrowserRouter>
 	);

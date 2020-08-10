@@ -39,6 +39,9 @@ const StyledNav = styled.nav`
 		list-style: none;
 		display: flex;
 		flex-direction: column;
+		height: 50%;
+		justify-content: space-around;
+		align-items: center;
 
 		@media ${device.tablet} {
 			width: 40%;
@@ -48,16 +51,15 @@ const StyledNav = styled.nav`
 			height: 100%;
 		}
 
+		.selected {
+			background-color: ${({ theme }) => theme.secondary};
+			border-radius: 10px;
+		}
+
 		li {
 			cursor: pointer;
 			text-align: center;
 			font-size: 3rem;
-			padding: 0.5rem;
-
-			:hover {
-				border-top: 1px solid ${({ theme }) => theme.secondary};
-				border-bottom: 1px solid ${({ theme }) => theme.secondary};
-			}
 
 			@media ${device.tablet} {
 				font-size: 1.2rem;
@@ -67,6 +69,13 @@ const StyledNav = styled.nav`
 				text-align: center;
 				text-decoration: none;
 				color: ${({ theme }) => theme.white};
+				padding: 0.5rem;
+
+				:hover,
+				:focus {
+					border-top: 1px solid ${({ theme }) => theme.secondary};
+					border-bottom: 1px solid ${({ theme }) => theme.secondary};
+				}
 			}
 		}
 	}
@@ -84,16 +93,24 @@ const Navigation: React.FC<OpenType> = ({ menuHandler, open }) => {
 		<StyledNav open={open}>
 			<ul>
 				<li>
-					<NavLink to="/">Home</NavLink>
+					<NavLink exact={true} to="/" activeClassName="selected">
+						Home
+					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/projects">Projects</NavLink>
+					<NavLink to="/projects" activeClassName="selected">
+						Projects
+					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/technologies">Technologies</NavLink>
+					<NavLink to="/technologies" activeClassName="selected">
+						Technologies
+					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/contact">Contact</NavLink>
+					<NavLink to="/contact" activeClassName="selected">
+						Contact
+					</NavLink>
 				</li>
 			</ul>
 		</StyledNav>
