@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { device } from "../../styles/main-styles.styles";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 declare module "react" {
 	interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
@@ -19,8 +20,9 @@ const StyledNav = styled.nav`
 	align-items: center;
 	width: 100vw;
 	height: 100vh;
-	transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
+	transform: ${({ open }) => (open ? "translateY(0%)" : "translateY(-100%)")};
 	background: ${({ theme }) => theme.primary};
+	transition: all ease-in-out 500ms;
 	z-index: 5;
 
 	@media ${device.tablet} {
@@ -44,11 +46,15 @@ const StyledNav = styled.nav`
 		align-items: center;
 
 		@media ${device.tablet} {
-			width: 40%;
+			width: 60%;
 			flex-direction: row;
 			justify-content: space-around;
 			align-items: center;
 			height: 100%;
+		}
+
+		@media ${device.desktop} {
+			width: 40%;
 		}
 
 		.selected {

@@ -45,7 +45,7 @@ const Header: React.FC = () => {
 
 	return (
 		<StyledHeader>
-			<Hamburger menuHandler={MenuHandler} />
+			<Hamburger menuHandler={MenuHandler} open={open} />
 			<Navigation menuHandler={MenuHandler} open={open} />
 		</StyledHeader>
 	);

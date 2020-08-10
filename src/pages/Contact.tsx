@@ -5,6 +5,7 @@ import { Email } from "@styled-icons/entypo/Email";
 import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare";
 import { Github } from "@styled-icons/boxicons-logos/Github";
 import { device } from "../styles/main-styles.styles";
+import { motion } from "framer-motion";
 
 const EmailLogo = styled(Email)`
 	width: 3rem;
@@ -76,10 +77,23 @@ const StyledContactForm = styled.div`
 			background-color: ${({ theme }) => theme.primary};
 			border: 1px solid ${({ theme }) => theme.fifth};
 		}
+
+		button {
+			background-color: ${({ theme }) => theme.secondary};
+			border: none;
+			width: 50%;
+			margin: 1em auto 0 0;
+			padding: 1rem;
+			cursor: pointer;
+
+			:hover {
+				opacity: 0.9;
+			}
+		}
 	}
 `;
 
-const StyledContactInfoWrapper = styled.div`
+const StyledContactInfoWrapper = styled(motion.div)`
 	width: 100%;
 	height: 50vh;
 	display: flex;
@@ -129,7 +143,13 @@ const Contact = () => (
 			paragraph="If you have any question please feel free to contact me !"
 		/>
 		<Wrapper>
-			<StyledContactInfoWrapper>
+			<StyledContactInfoWrapper
+				initial={{ x: -300 }}
+				animate={{
+					x: 0,
+				}}
+				transition={{ duration: 1.5 }}
+			>
 				<StyledContactInfo>
 					<EmailLogo />
 					<div>
@@ -172,6 +192,7 @@ const Contact = () => (
 					<input type="email" required />
 					<label htmlFor="">Message</label>
 					<textarea rows={8} />
+					<button>Submit</button>
 				</form>
 			</StyledContactForm>
 		</Wrapper>

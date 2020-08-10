@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../button/button";
 import { device } from "../../styles/main-styles.styles";
-
+import { motion } from "framer-motion";
 const parfum = require("../../assets/images/parfum.JPG");
 
 // interface ImgProps {
 // 	readonly asd: String;
 // }
 
-const StyledProjectItem = styled.div`
+const StyledProjectItem = styled(motion.div)`
 	width: 80%;
 	margin: 1rem auto;
 	min-height: 70vh;
@@ -112,9 +112,21 @@ const ButtonContainer = styled.section`
 `;
 
 const ProjectItem = () => (
-	<StyledProjectItem>
+	<StyledProjectItem
+		initial={{ scale: 0.6, x: -100, y: -100 }}
+		animate={{
+			x: 0,
+			y: 0,
+			scale: 1,
+		}}
+		transition={{ duration: 1 }}
+	>
 		<Wrapper>
-			<a href="https://parfum-shop.herokuapp.com/" target="_blank">
+			<a
+				href="https://parfum-shop.herokuapp.com/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
 				<StyledImage src={parfum} alt="project image" />
 			</a>
 		</Wrapper>

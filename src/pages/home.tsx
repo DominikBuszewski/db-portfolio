@@ -2,14 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { device } from "../styles/main-styles.styles";
 import Button from "../components/button/button";
+import { motion } from "framer-motion";
 
-const StyledBackground = styled.div`
+const StyledBackground = styled(motion.div)`
 	background-color: ${({ theme }) => theme.secondary};
 	width: 100vw;
 	height: 100vh;
 `;
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled(motion.div)`
 	width: 100%;
 	height: 100%;
 	background: ${({ theme }) => theme.primary};
@@ -43,7 +44,7 @@ const StyledWrapper = styled.div`
 	}
 `;
 
-const StyledButtonContainer = styled.div`
+const StyledButtonContainer = styled(motion.div)`
 	width: 40%;
 	max-width: 20rem;
 	margin: 2em auto;
@@ -70,7 +71,11 @@ const HomePage: React.FC = () => (
 		<StyledWrapper>
 			<h3>Front End Developer </h3>
 			<h1>Dominik Buszewski</h1>
-			<StyledButtonContainer>
+			<StyledButtonContainer
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1 }}
+			>
 				<Button prop={fakeclick} name={"Projects"} />
 
 				<Button inverted prop={fakeclick} name={"Contact"} />

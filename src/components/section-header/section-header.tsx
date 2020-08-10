@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { device } from "../../styles/main-styles.styles";
+import { motion } from "framer-motion";
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled(motion.div)`
 	width: 80%;
 	margin: 0 auto;
 
@@ -45,7 +46,11 @@ type SectionType = {
 
 const SectionHeader: React.FC<SectionType> = ({ title, paragraph }) => {
 	return (
-		<StyledWrapper>
+		<StyledWrapper
+			initial={{ y: -200 }}
+			animate={{ y: 0 }}
+			transition={{ duration: 1 }}
+		>
 			<h1>{title}</h1>
 			<p>{paragraph}</p>
 		</StyledWrapper>
