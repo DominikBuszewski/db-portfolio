@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import GlobalStyle from "./styles/global-styles.styles";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/header/header.component";
@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Projects from "./pages/Projects";
 import Technologies from "./pages/Technologies";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 import { theme } from "./styles/main-styles.styles";
 
 const App: React.FC = () => {
@@ -21,6 +22,7 @@ const App: React.FC = () => {
 						<Route exact path="/projects" component={Projects} />
 						<Route exact path="/technologies" component={Technologies} />
 						<Route exact path="/contact" component={Contact} />
+						<Route exact path="/aboutme" component={About} />
 					</Switch>
 				</main>
 			</ThemeProvider>

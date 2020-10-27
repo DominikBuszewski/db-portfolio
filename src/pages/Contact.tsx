@@ -8,15 +8,15 @@ import { device } from "../styles/main-styles.styles";
 import { motion } from "framer-motion";
 
 const EmailLogo = styled(Email)`
-	width: 3rem;
+	width: 4rem;
 	color: ${({ theme }) => theme.white};
 `;
 const LinkedinLogo = styled(LinkedinSquare)`
-	width: 3rem;
+	width: 4rem;
 	color: ${({ theme }) => theme.white};
 `;
 const GithubLogo = styled(Github)`
-	width: 3rem;
+	width: 4rem;
 	color: ${({ theme }) => theme.white};
 `;
 
@@ -114,11 +114,12 @@ const StyledContactInfo = styled.div`
 	display: flex;
 
 	div {
-		width: 80%;
-		margin: 1em 0;
+		width: 60%;
+		margin: 1em 1em;
 
 		@media ${device.desktop} {
 			width: 100%;
+			margin: 1em 2em;
 		}
 	}
 
@@ -126,11 +127,10 @@ const StyledContactInfo = styled.div`
 	h3 {
 		font-size: 0.8rem;
 		color: ${({ theme }) => theme.white};
-		margin-left: 1em;
-		margin-top: 0.5em;
+		margin: 1em 0em;
 	}
 
-	span {
+	p:last-child {
 		font-weight: bold;
 	}
 `;
@@ -154,33 +154,24 @@ const Contact = () => (
 					<EmailLogo />
 					<div>
 						<h3>Would you like to write me a message?</h3>
-						<p>
-							Use my email address:
-							<br /> <span>dominik.buszewski@gmai.com</span>
-						</p>
+						<p>Use my email address:</p>
+						<p>dominik.buszewski@gmail.com</p>
 					</div>
 				</StyledContactInfo>
 				<StyledContactInfo>
 					<LinkedinLogo />
 					<div>
 						<h3>Would you like to see my work experience?</h3>
-						<p>
-							Check my Linkedin:
-							<br />
-							<span>
-								https://www.linkedin.com/in/dominik-buszewski-4697171a4/
-							</span>
-						</p>
+						<p>Check my Linkedin:</p>
+						<p>https://www.linkedin.com/in/dominik-buszewski-4697171a4/</p>
 					</div>
 				</StyledContactInfo>
 				<StyledContactInfo>
 					<GithubLogo />
 					<div>
 						<h3>Would you like to see my code?</h3>
-						<p>
-							Check my github: <br />
-							<span>https://github.com/DominikBuszewski</span>
-						</p>
+						<p>Check my github:</p>
+						<p>https://github.com/DominikBuszewski</p>
 					</div>
 				</StyledContactInfo>
 			</StyledContactInfoWrapper>

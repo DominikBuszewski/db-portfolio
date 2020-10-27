@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const StyledWrapper = styled(motion.div)`
 	width: 80%;
-	margin: 0 auto;
+	margin: 1em auto;
 
 	@media ${device.tablet} {
 		width: 50%;
@@ -33,6 +33,8 @@ const StyledWrapper = styled(motion.div)`
 	}
 
 	p {
+		margin-top: 1em;
+
 		@media ${device.tablet} {
 			font-size: 1.4rem;
 		}

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { device } from "../styles/main-styles.styles";
 import Button from "../components/button/button";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 const StyledBackground = styled(motion.div)`
 	background-color: ${({ theme }) => theme.secondary};
@@ -62,10 +63,6 @@ const StyledButtonContainer = styled(motion.div)`
 	}
 `;
 
-const fakeclick = () => {
-	console.log("click");
-};
-
 const HomePage: React.FC = () => (
 	<StyledBackground>
 		<StyledWrapper>
@@ -76,9 +73,12 @@ const HomePage: React.FC = () => (
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
 			>
-				<Button prop={fakeclick} name={"Projects"} />
-
-				<Button inverted prop={fakeclick} name={"Contact"} />
+				<NavLink to="/projects">
+					<Button name={"Projects"} />
+				</NavLink>
+				<NavLink to="/contact">
+					<Button inverted name={"Contact"} />
+				</NavLink>
 			</StyledButtonContainer>
 		</StyledWrapper>
 	</StyledBackground>

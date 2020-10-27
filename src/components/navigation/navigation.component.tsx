@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { device } from "../../styles/main-styles.styles";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
 
 declare module "react" {
 	interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
@@ -26,12 +25,14 @@ const StyledNav = styled.nav`
 	z-index: 5;
 
 	@media ${device.tablet} {
+		width: 90vw;
 		height: 10vh;
 		align-items: center;
 		justify-content: flex-end;
 		transform: translateX(0%);
 		transition: 0s ease;
 		background-color: transparent;
+		margin-right: 5vh;
 	}
 
 	@media ${device.desktop} {
@@ -68,7 +69,7 @@ const StyledNav = styled.nav`
 			font-size: 3rem;
 
 			@media ${device.tablet} {
-				font-size: 1.2rem;
+				font-size: 1rem;
 			}
 
 			a {
@@ -89,14 +90,14 @@ const StyledNav = styled.nav`
 
 // type Dispatcher<S> = Dispatch<SetStateAction<S>>;
 
-type OpenType = {
+type Props = {
 	menuHandler: any;
 	open: boolean;
 };
 
-const Navigation: React.FC<OpenType> = ({ menuHandler, open }) => {
+const Navigation: React.FC<Props> = ({ menuHandler, open }) => {
 	return (
-		<StyledNav open={open}>
+		<StyledNav open={open} onClick={menuHandler}>
 			<ul>
 				<li>
 					<NavLink exact={true} to="/" activeClassName="selected">
@@ -111,6 +112,11 @@ const Navigation: React.FC<OpenType> = ({ menuHandler, open }) => {
 				<li>
 					<NavLink to="/technologies" activeClassName="selected">
 						Technologies
+					</NavLink>
+				</li>
+				<li>
+					<NavLink to="/aboutme" activeClassName="selected">
+						About
 					</NavLink>
 				</li>
 				<li>

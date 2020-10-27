@@ -1,7 +1,6 @@
-import React, { AriaAttributes, DOMAttributes } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import { device } from "../../styles/main-styles.styles";
-import { AnySoaRecord } from "dns";
 
 // declare module "react" {
 // 	interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
@@ -25,7 +24,6 @@ const StyledButton = styled.button<Props>`
 	border: 2px solid ${({ theme }) => theme.secondary};
 	background-color: ${({ theme }) => theme.secondary};
 
-
 	${({ inverted }) =>
 		inverted &&
 		css`
@@ -33,7 +31,6 @@ const StyledButton = styled.button<Props>`
 			color: ${({ theme }) => theme.secondary};
 			border: 2px solid ${({ theme }) => theme.secondary};
 		`}
-
 
 	@media ${device.tablet} {
 		/* padding: 1.7rem; */
